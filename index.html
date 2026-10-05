@@ -1047,60 +1047,6 @@ footer{
 }
 
 
-/* ---------- painel (planilha) ---------- */
-.bi{background:var(--bg);padding-top:0}
-.bi-frame{
-  border-radius:20px;
-  background:var(--forest-deep);
-  border:1px solid rgba(169,226,102,.18);
-  box-shadow:0 40px 80px -40px rgba(14,42,30,.55);
-  overflow:hidden;
-}
-.bi-bar{
-  display:flex;align-items:center;gap:8px;
-  padding:14px 20px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.03);
-}
-.bi-bar i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.18);display:block}
-.bi-bar .url{
-  margin-left:12px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.06em;
-  color:#B8CDBE;
-  background:rgba(255,255,255,.05);
-  padding:4px 12px;border-radius:100px;
-}
-.bi-bar .demo{
-  margin-left:auto;
-  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--lime);opacity:.8;
-}
-.bi-shot{display:block;background:#fff;cursor:zoom-in}
-.bi-shot img{width:100%;height:auto;display:block}
-.bi-foot{
-  display:flex;gap:10px;flex-wrap:wrap;
-  padding:18px 20px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.04em;
-  border-top:1px solid rgba(255,255,255,.08);
-}
-.bi-foot span{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 12px;border-radius:100px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  color:#D8E3DA;
-}
-.bi-foot span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime)}
-.bi-note{
-  text-align:center;margin-top:18px;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--muted);
-}
-@media(max-width:520px){
-  .bi-bar .url{display:none}
-  .bi-foot{padding:14px}
-}
-
 /* ---------- selos de pagamento ---------- */
 .pay-seals{
   display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
@@ -1168,6 +1114,82 @@ footer{
   color:var(--muted);text-align:center;
 }
 @media(max-width:760px){.reviews-grid{grid-template-columns:1fr}}
+
+/* ---------- bônus visuais ---------- */
+.bonus-card{display:flex;flex-direction:column;padding:20px 20px 30px}
+.bonus-card .tag-plus{z-index:2}
+.bonus-card h3,.bonus-card p{padding:0 8px}
+.b-visual{
+  background:var(--forest-deep);
+  color:var(--paper);
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:24px;
+  min-height:214px;
+  display:flex;flex-direction:column;gap:12px;
+  font-size:13px;
+  box-shadow:0 18px 36px -22px rgba(14,42,30,.6);
+}
+.bv-top{
+  display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#B8CDBE;
+  padding-right:70px;
+}
+.bv-top b{font-family:var(--serif);font-size:22px;letter-spacing:-.02em;text-transform:none;color:var(--lime);font-weight:600}
+.bv-top b.timer,.bv-top b.online{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--lime);font-weight:500}
+.bv-top.col{flex-direction:column;align-items:flex-start;gap:4px}
+.bv-top.col b{font-size:30px;line-height:1.1}
+@media(min-width:901px){.b-visual{min-height:262px}}
+.split-bar{display:flex;height:14px;border-radius:100px;overflow:hidden;gap:2px;margin-top:4px}
+.split-bar i{display:block;height:100%}
+.split-legend,.rot-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.split-legend li{display:flex;align-items:center;gap:8px;color:#D8E3DA}
+.split-legend li i{width:9px;height:9px;border-radius:2px;flex:none}
+.split-legend li b{margin-left:auto;font-family:var(--mono);font-weight:500;font-size:12px;color:var(--paper)}
+.split-legend li.hl{color:var(--lime)}
+.split-legend li.hl b{color:var(--lime)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.week span{
+  text-align:center;padding:6px 0;border-radius:6px;
+  font-family:var(--mono);font-size:10px;color:#8FA597;
+  background:rgba(255,255,255,.05);
+}
+.week span.on{background:var(--lime);color:var(--forest-deep);font-weight:600}
+.rot-list li{display:flex;align-items:center;gap:10px;color:#D8E3DA}
+.rot-list .ck{width:18px;height:18px;border-radius:5px;background:var(--lime);color:var(--forest-deep);display:grid;place-items:center;flex:none}
+.rot-list .ck svg{width:11px;height:11px}
+.rot-list em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:11px;color:#8FA597}
+.b-visual.chat{gap:8px}
+.msg{max-width:86%;padding:8px 12px;border-radius:12px;line-height:1.4;font-size:12.5px}
+.msg.me{align-self:flex-end;background:rgba(255,255,255,.1);color:var(--paper);border-bottom-right-radius:4px}
+.msg.ai{align-self:flex-start;background:rgba(169,226,102,.14);border:1px solid rgba(169,226,102,.3);color:#D8E3DA;border-bottom-left-radius:4px}
+.msg.ai b{color:var(--lime);font-weight:600}
+
+/* ---------- empilhamento da oferta ---------- */
+.stack{list-style:none;display:flex;flex-direction:column;gap:13px}
+.stack li{display:flex;align-items:baseline;gap:10px;font-size:15px;color:#D8E3DA}
+.stack .it{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.stack .it svg{width:16px;height:16px;flex:none;color:var(--lime);margin-top:4px}
+.stack .dots{flex:1;min-width:16px;border-bottom:1px dotted rgba(255,255,255,.22);transform:translateY(-4px)}
+.stack s{font-family:var(--mono);font-size:13px;color:#8FA597;white-space:nowrap;text-decoration-color:#E8A0A0}
+.stack .free{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);white-space:nowrap}
+.stack-total{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-top:22px;padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.14);
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#B8CDBE;
+}
+.stack-total s{font-family:var(--serif);font-size:30px;letter-spacing:-.02em;text-transform:none;color:#E8A0A0;font-weight:600;text-decoration-thickness:2px}
+.oferta-preco .de{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:#B8CDBE;margin-bottom:6px}
+.oferta-preco .de s{color:#E8A0A0;text-decoration-thickness:2px}
+.oferta-preco .economia{
+  display:inline-block;margin-top:10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  color:var(--forest-deep);background:var(--lime);
+  padding:4px 12px;border-radius:100px;font-weight:600;
+}
+.oferta-preco .parcelas{margin-top:12px}
+@media(max-width:520px){.stack li{font-size:14px}}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -1450,35 +1472,6 @@ footer{
   </section>
 
 
-  <!-- PAINEL BI -->
-  <section class="bi" id="painel">
-    <div class="wrap">
-      <div class="sec-head center">
-        <span class="eyebrow center">Por dentro do painel</span>
-        <h2>Este é o painel que você vai <em>usar</em>.</h2>
-        <p>Uma planilha pronta no Google Planilhas: você lança receitas e gastos, e ela mostra quanto entrou, para onde foi e quanto realmente sobrou.</p>
-      </div>
-
-      <div class="bi-frame">
-        <div class="bi-bar" aria-hidden="true">
-          <i></i><i></i><i></i>
-          <span class="url">Painel Financeiro · Negócios Digitais Conforme</span>
-          <span class="demo">Google Planilhas</span>
-        </div>
-        <a class="bi-shot" href="img/painel-planilha.webp" target="_blank" rel="noopener" aria-label="Ampliar imagem do Painel Financeiro">
-          <img src="img/painel-planilha.webp" width="1600" height="685" loading="lazy" decoding="async" alt="Painel Financeiro do Lucro no Google Planilhas: aba de janeiro com resumo do mês (receitas, gastos, lucro líquido e margem), lançamentos de receitas e gastos por categoria e fluxo de caixa diário">
-        </a>
-        <div class="bi-foot">
-          <span>Resumo do mês com lucro líquido e margem</span>
-          <span>Lançamentos de receitas e gastos por categoria</span>
-          <span>Fluxo de caixa diário</span>
-          <span>Uma aba por mês + visão anual</span>
-        </div>
-      </div>
-      <p class="bi-note">Clique na imagem para ampliar · os valores do seu painel serão os do seu negócio</p>
-    </div>
-  </section>
-
   <!-- BÔNUS -->
   <section class="bonus">
     <div class="wrap">
@@ -1490,12 +1483,14 @@ footer{
       <div class="bonus-grid">
         <article class="bonus-card">
           <span class="tag-plus">Bônus 01</span>
-          <div>
-            <span class="num">i.</span>
-            <span class="b-icon" aria-hidden="true">
-              <!-- carteira/wallet -->
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v16a3 3 0 003 3h21a2 2 0 002-2V13a2 2 0 00-2-2H7a3 3 0 01-3-2z"/><path d="M4 9a3 3 0 013-3h18v5"/><circle cx="23" cy="19" r="1.5" fill="currentColor"/></svg>
-            </span>
+          <div class="b-visual" aria-hidden="true">
+            <div class="bv-top col"><span>Lucro real do mês</span><b>R$ 14.200</b></div>
+            <div class="split-bar"><i style="width:30%;background:#B08D3F"></i><i style="width:20%;background:#5E8C6F"></i><i style="width:50%;background:var(--lime)"></i></div>
+            <ul class="split-legend">
+              <li><i style="background:#B08D3F"></i>Reserva da empresa<b>R$ 4.260</b></li>
+              <li><i style="background:#5E8C6F"></i>Reinvestimento<b>R$ 2.840</b></li>
+              <li class="hl"><i style="background:var(--lime)"></i>Sua retirada segura<b>R$ 7.100</b></li>
+            </ul>
           </div>
           <h3>Guia: quanto posso retirar do meu negócio</h3>
           <p>Depois de enxergar o lucro, um roteiro simples e prudente para pensar na sua retirada mensal com segurança, sem descapitalizar a empresa.</p>
@@ -1503,12 +1498,14 @@ footer{
 
         <article class="bonus-card">
           <span class="tag-plus">Bônus 02</span>
-          <div>
-            <span class="num">ii.</span>
-            <span class="b-icon" aria-hidden="true">
-              <!-- relógio/rotina -->
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="17" r="11"/><path d="M16 11v6l4 3"/><path d="M12 3h8"/></svg>
-            </span>
+          <div class="b-visual" aria-hidden="true">
+            <div class="bv-top"><span>Sexta · 9h00</span><b class="timer">⏱ 30:00</b></div>
+            <div class="week"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span class="on">Sex</span><span>Sáb</span><span>Dom</span></div>
+            <ul class="rot-list">
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Lançar entradas e saídas<em>10 min</em></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Conferir separação PF × PJ<em>10 min</em></li>
+              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Ver o lucro da semana<em>10 min</em></li>
+            </ul>
           </div>
           <h3>Rotina financeira de 30 minutos por semana</h3>
           <p>O ritual mínimo para manter o painel atualizado e o financeiro sob controle sem virar planilheiro. 30 minutos por semana, e o mês inteiro fecha certo.</p>
@@ -1516,12 +1513,12 @@ footer{
 
         <article class="bonus-card">
           <span class="tag-plus">Bônus 03</span>
-          <div>
-            <span class="num">iii.</span>
-            <span class="b-icon" aria-hidden="true">
-              <!-- chip/IA -->
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="16" height="16" rx="2"/><rect x="13" y="13" width="6" height="6"/><path d="M12 4v4M20 4v4M12 24v4M20 24v4M4 12h4M4 20h4M24 12h4M24 20h4"/></svg>
-            </span>
+          <div class="b-visual chat" aria-hidden="true">
+            <div class="bv-top"><span>Agente Raio X</span><b class="online">● online</b></div>
+            <div class="msg me">Pix R$ 89,90 · Canva Pro</div>
+            <div class="msg ai"><b>Ferramentas</b> · conta PJ ✓<br>Lançado no painel.</div>
+            <div class="msg me">Uber R$ 32 no sábado</div>
+            <div class="msg ai"><b>Pessoal</b> · conta PF ✓<br>Fora do caixa da empresa.</div>
           </div>
           <h3>Agente de IA para preencher o painel</h3>
           <p>Um modelo pronto para você conversar com uma IA e categorizar lançamentos, manter as contas separadas e o Raio X atualizado depois das 2 horas iniciais.</p>
@@ -1534,27 +1531,30 @@ footer{
   <section class="oferta" id="oferta">
     <div class="oferta-inner">
       <span class="eyebrow center">Oferta</span>
-      <h2>Tudo isso, por menos que uma <em>rodada no Uber</em>.</h2>
+      <h2>R$ 555 em conteúdo e ferramentas.<br>Hoje, por menos que uma <em>rodada no Uber</em>.</h2>
 
       <div class="oferta-box">
         <div class="oferta-grid">
           <div>
-            <div class="oferta-inclui">O que está incluso</div>
-            <ul class="oferta-lista">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> 4 aulas gravadas + checklist</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Painel Financeiro do Lucro (pronto para uso)</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Bônus 01 · Guia de retirada</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Bônus 02 · Rotina financeira semanal</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Bônus 03 · Agente de IA para categorização</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Suporte por e-mail durante o período de garantia</li>
+            <div class="oferta-inclui">Tudo o que você recebe</div>
+            <ul class="stack">
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>4 aulas gravadas + checklist das 2 horas</span><span class="dots"></span><s>R$ 197</s></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Painel Financeiro do Lucro (pronto para uso)</span><span class="dots"></span><s>R$ 147</s></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bônus 01 · Guia: quanto posso retirar</span><span class="dots"></span><s>R$ 67</s></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bônus 02 · Rotina financeira de 30 min</span><span class="dots"></span><s>R$ 47</s></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bônus 03 · Agente de IA para categorização</span><span class="dots"></span><s>R$ 97</s></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Suporte por e-mail durante a garantia</span><span class="dots"></span><span class="free">incluso</span></li>
             </ul>
+            <div class="stack-total"><span>Valor total</span><s>R$ 555</s></div>
           </div>
 
           <div class="oferta-divider" aria-hidden="true"></div>
 
           <div class="oferta-preco">
-            <div class="label">Investimento único</div>
-            <div class="valor"><span class="cifrao">R$</span>27<sup>,00</sup></div>
+            <div class="de">De <s>R$ 555</s></div>
+            <div class="label">Tudo isso por apenas</div>
+            <div class="valor"><span class="cifrao">R$</span>27<sup>,90</sup></div>
+            <div class="economia">Você economiza R$ 527,10 · 95% off</div>
             <div class="parcelas">à vista · pagamento único · acesso vitalício</div>
             <a class="btn btn-primary" href="#oferta">
               Fazer meu Raio X agora
