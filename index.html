@@ -1115,55 +1115,167 @@ footer{
 }
 @media(max-width:760px){.reviews-grid{grid-template-columns:1fr}}
 
-/* ---------- bônus visuais ---------- */
-.bonus-card{display:flex;flex-direction:column;padding:20px 20px 30px}
-.bonus-card .tag-plus{z-index:2}
-.bonus-card h3,.bonus-card p{padding:0 8px}
+/* ---------- bônus visuais (mockups) ---------- */
+.bonus-card{display:flex;flex-direction:column;padding:16px 16px 30px}
+.bonus-card .tag-plus{z-index:3}
+.bonus-card h3,.bonus-card p{padding:0 12px}
 .b-visual{
-  background:var(--forest-deep);
-  color:var(--paper);
+  position:relative;
+  height:300px;
+  margin-bottom:26px;
   border-radius:12px;
-  padding:18px;
-  margin-bottom:24px;
-  min-height:214px;
-  display:flex;flex-direction:column;gap:12px;
-  font-size:13px;
-  box-shadow:0 18px 36px -22px rgba(14,42,30,.6);
+  overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 50% 110%, rgba(169,226,102,.35), transparent 60%),
+    linear-gradient(160deg,#E9E3D6,#D9E4D4);
+  display:flex;justify-content:center;
 }
-.bv-top{
-  display:flex;justify-content:space-between;align-items:baseline;gap:10px;
-  font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#B8CDBE;
-  padding-right:70px;
+/* livro 3D */
+.v-book{align-items:center;perspective:1100px}
+.book{
+  position:relative;
+  width:168px;height:232px;
+  transform:rotateY(-24deg) rotateX(4deg);
+  transform-style:preserve-3d;
+  filter:drop-shadow(18px 22px 18px rgba(14,42,30,.35));
 }
-.bv-top b{font-family:var(--serif);font-size:22px;letter-spacing:-.02em;text-transform:none;color:var(--lime);font-weight:600}
-.bv-top b.timer,.bv-top b.online{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--lime);font-weight:500}
-.bv-top.col{flex-direction:column;align-items:flex-start;gap:4px}
-.bv-top.col b{font-size:30px;line-height:1.1}
-@media(min-width:901px){.b-visual{min-height:262px}}
-.split-bar{display:flex;height:14px;border-radius:100px;overflow:hidden;gap:2px;margin-top:4px}
-.split-bar i{display:block;height:100%}
-.split-legend,.rot-list{list-style:none;display:flex;flex-direction:column;gap:8px}
-.split-legend li{display:flex;align-items:center;gap:8px;color:#D8E3DA}
-.split-legend li i{width:9px;height:9px;border-radius:2px;flex:none}
-.split-legend li b{margin-left:auto;font-family:var(--mono);font-weight:500;font-size:12px;color:var(--paper)}
-.split-legend li.hl{color:var(--lime)}
-.split-legend li.hl b{color:var(--lime)}
-.week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.week span{
-  text-align:center;padding:6px 0;border-radius:6px;
-  font-family:var(--mono);font-size:10px;color:#8FA597;
-  background:rgba(255,255,255,.05);
+.book::before{ /* páginas */
+  content:"";
+  position:absolute;top:4px;bottom:4px;right:-14px;width:16px;
+  background:repeating-linear-gradient(90deg,#fff 0 1px,#E7E1D3 1px 2px);
+  transform:rotateY(78deg);transform-origin:left;
+  border-radius:0 2px 2px 0;
 }
-.week span.on{background:var(--lime);color:var(--forest-deep);font-weight:600}
-.rot-list li{display:flex;align-items:center;gap:10px;color:#D8E3DA}
-.rot-list .ck{width:18px;height:18px;border-radius:5px;background:var(--lime);color:var(--forest-deep);display:grid;place-items:center;flex:none}
-.rot-list .ck svg{width:11px;height:11px}
-.rot-list em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:11px;color:#8FA597}
-.b-visual.chat{gap:8px}
-.msg{max-width:86%;padding:8px 12px;border-radius:12px;line-height:1.4;font-size:12.5px}
-.msg.me{align-self:flex-end;background:rgba(255,255,255,.1);color:var(--paper);border-bottom-right-radius:4px}
-.msg.ai{align-self:flex-start;background:rgba(169,226,102,.14);border:1px solid rgba(169,226,102,.3);color:#D8E3DA;border-bottom-left-radius:4px}
-.msg.ai b{color:var(--lime);font-weight:600}
+.book-cover{
+  position:absolute;inset:0;
+  border-radius:3px 6px 6px 3px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.35) 0, rgba(255,255,255,.08) 5px, transparent 12px),
+    radial-gradient(circle at 80% 15%, rgba(169,226,102,.25), transparent 45%),
+    linear-gradient(160deg,#1B4332,#0E2A1E 70%);
+  padding:20px 16px 16px 22px;
+  display:flex;flex-direction:column;gap:10px;
+  color:var(--paper);
+  overflow:hidden;
+}
+.book-cover::after{ /* brilho */
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(115deg, transparent 40%, rgba(255,255,255,.12) 50%, transparent 60%);
+}
+.bk-tag{font-family:var(--mono);font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+.bk-title{font-family:var(--serif);font-size:21px;line-height:1.05;font-weight:700;letter-spacing:-.02em}
+.bk-title em{color:var(--lime);font-style:italic}
+.bk-line{width:28px;height:2px;background:var(--lime)}
+.bk-sub{font-size:9px;line-height:1.4;color:#B8CDBE}
+.bk-brand{margin-top:auto;display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:6.5px;letter-spacing:.12em;text-transform:uppercase;color:#B8CDBE}
+.bk-brand svg{width:16px;height:16px}
+
+/* celular */
+.v-phone{align-items:flex-start}
+.phone{
+  margin-top:26px;
+  width:206px;height:420px;
+  border-radius:38px;
+  background:#16181a;
+  padding:7px;
+  box-shadow:
+    0 0 0 1.5px #3a3d40 inset,
+    0 0 0 2px #8b8f93,
+    0 30px 50px -16px rgba(14,42,30,.5);
+  transform:rotate(-3deg);
+}
+.v-ai .phone{transform:rotate(3deg)}
+.ph-screen{position:relative;height:100%;border-radius:31px;overflow:hidden;font-family:var(--sans)}
+.ph-island{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:64px;height:18px;border-radius:20px;background:#000;z-index:2}
+.ph-status{display:flex;justify-content:space-between;align-items:center;padding:9px 20px 0 22px;font-size:10px;font-weight:600;height:30px}
+.ph-icons{display:flex;gap:4px;align-items:center}
+.ph-icons i{display:block;background:currentColor;border-radius:1px}
+.ph-icons .sig{width:11px;height:7px;clip-path:polygon(0 100%,100% 0,100% 100%)}
+.ph-icons .wifi{width:10px;height:7px;border-radius:10px 10px 0 0;clip-path:polygon(50% 100%,0 0,100% 0)}
+.ph-icons .bat{width:17px;height:8px;border-radius:2px}
+
+/* tela de bloqueio */
+.ph-screen.lock{
+  color:#fff;
+  background:
+    radial-gradient(90% 60% at 30% 10%, rgba(169,226,102,.55), transparent 60%),
+    radial-gradient(80% 70% at 90% 90%, rgba(176,141,63,.45), transparent 60%),
+    linear-gradient(170deg,#2C5A44,#0E2A1E);
+}
+.lk-date{text-align:center;font-size:11px;font-weight:500;margin-top:10px;opacity:.9}
+.lk-time{text-align:center;font-size:62px;font-weight:600;line-height:1;letter-spacing:-.03em;margin-bottom:22px}
+.notif{
+  margin:0 9px 7px;
+  padding:10px 11px;
+  border-radius:16px;
+  background:rgba(245,245,240,.82);
+  backdrop-filter:blur(10px);
+  color:#111;
+  box-shadow:0 6px 18px -8px rgba(0,0,0,.4);
+}
+.notif.ghost{background:rgba(245,245,240,.5);transform:scale(.94);transform-origin:top}
+.nt-head{display:flex;align-items:center;gap:6px;font-size:9px;color:#555;margin-bottom:4px}
+.nt-head b{font-weight:600;color:#333;text-transform:uppercase;letter-spacing:.04em;font-size:8.5px}
+.nt-head span:last-child{margin-left:auto}
+.nt-ico{width:16px;height:16px;border-radius:4px;overflow:hidden;display:grid;place-items:center;flex:none}
+.nt-ico svg{width:16px;height:16px}
+.nt-ico.cal{background:#fff;color:#E5483A;font-size:8px;font-weight:700;box-shadow:0 0 0 .5px #ccc}
+.nt-title{font-size:11.5px;font-weight:600;line-height:1.3}
+.nt-body{font-size:10.5px;line-height:1.35;color:#333;margin-top:2px}
+
+/* app de IA */
+.ph-screen.chat{background:#FAFAF7;color:#1d1d1f;display:flex;flex-direction:column}
+.ai-head{display:flex;align-items:center;gap:8px;padding:6px 12px 9px;border-bottom:1px solid #ECEAE3}
+.ai-head b{display:block;font-size:11.5px;font-weight:600;line-height:1.2}
+.ai-head small{display:block;font-size:8.5px;color:#7a7a7a}
+.ai-av{
+  width:28px;height:28px;border-radius:50%;flex:none;
+  display:grid;place-items:center;color:#fff;
+  background:conic-gradient(from 210deg,#1B4332,#3E7326,#A9E266,#1B4332);
+  box-shadow:0 0 0 3px rgba(169,226,102,.25);
+}
+.ai-av svg{width:15px;height:15px}
+.ai-body{flex:1;padding:10px 10px;display:flex;flex-direction:column;gap:8px;font-size:10.5px;line-height:1.4}
+.bubble.me{
+  align-self:flex-end;max-width:80%;
+  background:#1B4332;color:#fff;
+  padding:6px 6px 8px;border-radius:14px 14px 4px 14px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.bubble.me{padding-left:6px}
+.receipt{
+  background:#fff;color:#222;border-radius:9px;
+  padding:7px 9px;width:104px;
+  display:flex;flex-direction:column;gap:2px;
+  font-family:var(--mono);font-size:7.5px;
+}
+.receipt b{font-size:7px;letter-spacing:.06em;color:#3E7326}
+.receipt span:last-of-type{font-size:10px;font-weight:600}
+.receipt i{display:block;height:3px;border-radius:2px;background:#E5E2DA;margin-top:2px}
+.receipt i:nth-of-type(2){width:70%}.receipt i:nth-of-type(3){width:45%}
+.ai-msg{display:flex;gap:6px;align-items:flex-start}
+.ai-mini{width:18px;height:18px;flex:none;color:#3E7326;margin-top:1px}
+.ai-mini svg{width:18px;height:18px}
+.bonus-card .ai-msg p{margin:0 0 6px;padding:0;font-size:10.5px;color:#1d1d1f;line-height:1.4}
+.ai-card{
+  display:grid;grid-template-columns:1fr auto;gap:4px 8px;align-items:center;
+  border:1px solid #E5E2DA;border-radius:10px;padding:8px 9px;background:#fff;
+  box-shadow:0 4px 12px -8px rgba(0,0,0,.25);
+}
+.ai-card span{font-weight:600}
+.ai-card b{white-space:nowrap;color:#B85C5C;font-family:var(--mono);font-size:10px;font-weight:600}
+.ai-card em{font-style:normal;font-size:8.5px;font-weight:600;padding:2px 7px;border-radius:100px;background:#EEF6E4;color:#3E7326;justify-self:start}
+.ai-card em.pj{background:#1B4332;color:#A9E266}
+.typing{display:flex;gap:3px;margin-top:8px}
+.typing i{width:5px;height:5px;border-radius:50%;background:#B8B4AA;animation:typing 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes typing{0%,60%,100%{opacity:.35;transform:none}30%{opacity:1;transform:translateY(-2px)}}
+.ai-input{
+  margin:0 9px 14px;display:flex;align-items:center;justify-content:space-between;
+  border:1px solid #E5E2DA;border-radius:100px;background:#fff;
+  padding:6px 6px 6px 12px;font-size:10px;color:#9a978f;
+}
+.ai-input .send{width:20px;height:20px;border-radius:50%;background:#1B4332;color:#A9E266;display:grid;place-items:center;font-size:11px;font-weight:700}
 
 /* ---------- empilhamento da oferta ---------- */
 .stack{list-style:none;display:flex;flex-direction:column;gap:13px}
@@ -1483,14 +1595,16 @@ footer{
       <div class="bonus-grid">
         <article class="bonus-card">
           <span class="tag-plus">Bônus 01</span>
-          <div class="b-visual" aria-hidden="true">
-            <div class="bv-top col"><span>Lucro real do mês</span><b>R$ 14.200</b></div>
-            <div class="split-bar"><i style="width:30%;background:#B08D3F"></i><i style="width:20%;background:#5E8C6F"></i><i style="width:50%;background:var(--lime)"></i></div>
-            <ul class="split-legend">
-              <li><i style="background:#B08D3F"></i>Reserva da empresa<b>R$ 4.260</b></li>
-              <li><i style="background:#5E8C6F"></i>Reinvestimento<b>R$ 2.840</b></li>
-              <li class="hl"><i style="background:var(--lime)"></i>Sua retirada segura<b>R$ 7.100</b></li>
-            </ul>
+          <div class="b-visual v-book" aria-hidden="true">
+            <div class="book">
+              <div class="book-cover">
+                <span class="bk-tag">Bônus 01 · Guia</span>
+                <span class="bk-title">Quanto posso <em>retirar</em> do meu negócio</span>
+                <span class="bk-line"></span>
+                <span class="bk-sub">Retirada mensal segura, sem descapitalizar a empresa</span>
+                <span class="bk-brand"><svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="21" fill="#1B4332"/><path d="M31 12.5A13 13 0 1 0 31 31.5" stroke="#F5F1EA" stroke-width="3.4" stroke-linecap="round"/><path d="M28.5 17A7.5 7.5 0 1 0 28.5 27" stroke="#A9E266" stroke-width="3.2" stroke-linecap="round"/></svg>Contabilidade Conforme</span>
+              </div>
+            </div>
           </div>
           <h3>Guia: quanto posso retirar do meu negócio</h3>
           <p>Depois de enxergar o lucro, um roteiro simples e prudente para pensar na sua retirada mensal com segurança, sem descapitalizar a empresa.</p>
@@ -1498,14 +1612,24 @@ footer{
 
         <article class="bonus-card">
           <span class="tag-plus">Bônus 02</span>
-          <div class="b-visual" aria-hidden="true">
-            <div class="bv-top"><span>Sexta · 9h00</span><b class="timer">⏱ 30:00</b></div>
-            <div class="week"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span class="on">Sex</span><span>Sáb</span><span>Dom</span></div>
-            <ul class="rot-list">
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Lançar entradas e saídas<em>10 min</em></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Conferir separação PF × PJ<em>10 min</em></li>
-              <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Ver o lucro da semana<em>10 min</em></li>
-            </ul>
+          <div class="b-visual v-phone v-lock" aria-hidden="true">
+            <div class="phone">
+              <div class="ph-screen lock">
+                <div class="ph-island"></div>
+                <div class="ph-status"><span>9:41</span><span class="ph-icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+                <div class="lk-date">Sexta-feira, 14 de novembro</div>
+                <div class="lk-time">9:00</div>
+                <div class="notif">
+                  <div class="nt-head"><span class="nt-ico"><svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="21" fill="#1B4332"/><path d="M31 12.5A13 13 0 1 0 31 31.5" stroke="#F5F1EA" stroke-width="3.4" stroke-linecap="round"/><path d="M28.5 17A7.5 7.5 0 1 0 28.5 27" stroke="#A9E266" stroke-width="3.2" stroke-linecap="round"/></svg></span><b>Rotina Financeira</b><span>agora</span></div>
+                  <div class="nt-title">Seus 30 minutos da semana ⏱</div>
+                  <div class="nt-body">Lançar entradas e saídas, conferir PF × PJ e ver o lucro da semana.</div>
+                </div>
+                <div class="notif ghost">
+                  <div class="nt-head"><span class="nt-ico cal">14</span><b>Calendário</b><span>9:00</span></div>
+                  <div class="nt-title">Raio X semanal · 30 min</div>
+                </div>
+              </div>
+            </div>
           </div>
           <h3>Rotina financeira de 30 minutos por semana</h3>
           <p>O ritual mínimo para manter o painel atualizado e o financeiro sob controle sem virar planilheiro. 30 minutos por semana, e o mês inteiro fecha certo.</p>
@@ -1513,12 +1637,29 @@ footer{
 
         <article class="bonus-card">
           <span class="tag-plus">Bônus 03</span>
-          <div class="b-visual chat" aria-hidden="true">
-            <div class="bv-top"><span>Agente Raio X</span><b class="online">● online</b></div>
-            <div class="msg me">Pix R$ 89,90 · Canva Pro</div>
-            <div class="msg ai"><b>Ferramentas</b> · conta PJ ✓<br>Lançado no painel.</div>
-            <div class="msg me">Uber R$ 32 no sábado</div>
-            <div class="msg ai"><b>Pessoal</b> · conta PF ✓<br>Fora do caixa da empresa.</div>
+          <div class="b-visual v-phone v-ai" aria-hidden="true">
+            <div class="phone">
+              <div class="ph-screen chat">
+                <div class="ph-island"></div>
+                <div class="ph-status"><span>9:41</span><span class="ph-icons"><i class="sig"></i><i class="wifi"></i><i class="bat"></i></span></div>
+                <div class="ai-head"><span class="ai-av"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c.4 4.6 2.4 7.6 7 8.6v.8c-4.6 1-6.6 4-7 8.6h-.8c-.4-4.6-2.4-7.6-7-8.6v-.8c4.6-1 6.6-4 7-8.6z"/><path fill="currentColor" opacity=".7" d="M19 15c.2 1.8 1 3 2.8 3.4v.4c-1.8.4-2.6 1.6-2.8 3.4h-.4c-.2-1.8-1-3-2.8-3.4v-.4c1.8-.4 2.6-1.6 2.8-3.4z"/></svg></span><div><b>Agente Raio X</b><small>IA · categoriza seus lançamentos</small></div></div>
+                <div class="ai-body">
+                  <div class="bubble me">
+                    <div class="receipt"><b>COMPROVANTE PIX</b><span>Canva Pty Ltd</span><span>R$ 89,90</span></div>
+                    Categoriza esse aqui
+                  </div>
+                  <div class="ai-msg">
+                    <span class="ai-mini"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c.4 4.6 2.4 7.6 7 8.6v.8c-4.6 1-6.6 4-7 8.6h-.8c-.4-4.6-2.4-7.6-7-8.6v-.8c4.6-1 6.6-4 7-8.6z"/><path fill="currentColor" opacity=".7" d="M19 15c.2 1.8 1 3 2.8 3.4v.4c-1.8.4-2.6 1.6-2.8 3.4h-.4c-.2-1.8-1-3-2.8-3.4v-.4c1.8-.4 2.6-1.6 2.8-3.4z"/></svg></span>
+                    <div>
+                      <p>Pronto! Lancei no seu painel:</p>
+                      <div class="ai-card"><span>Canva Pro</span><b>− R$ 89,90</b><em>Ferramentas</em><em class="pj">Conta PJ</em></div>
+                      <div class="typing"><i></i><i></i><i></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ai-input"><span>Pergunte ao agente…</span><span class="send">↑</span></div>
+              </div>
+            </div>
           </div>
           <h3>Agente de IA para preencher o painel</h3>
           <p>Um modelo pronto para você conversar com uma IA e categorizar lançamentos, manter as contas separadas e o Raio X atualizado depois das 2 horas iniciais.</p>
