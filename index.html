@@ -1047,7 +1047,7 @@ footer{
 }
 
 
-/* ---------- painel BI ---------- */
+/* ---------- painel (planilha) ---------- */
 .bi{background:var(--bg);padding-top:0}
 .bi-frame{
   border-radius:20px;
@@ -1055,7 +1055,6 @@ footer{
   border:1px solid rgba(169,226,102,.18);
   box-shadow:0 40px 80px -40px rgba(14,42,30,.55);
   overflow:hidden;
-  color:var(--paper);
 }
 .bi-bar{
   display:flex;align-items:center;gap:8px;
@@ -1076,61 +1075,13 @@ footer{
   font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--lime);opacity:.8;
 }
-.bi-body{padding:28px;display:flex;flex-direction:column;gap:20px}
-.bi-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
-.bi-head h3{color:var(--paper);font-size:24px;font-weight:600}
-.bi-head .periodo{
-  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--forest-deep);background:var(--lime);
-  padding:5px 12px;border-radius:100px;font-weight:600;
-}
-.bi-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.kpi{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;
-  padding:16px 18px;
-}
-.kpi .k-lbl{
-  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  color:#B8CDBE;margin-bottom:8px;
-}
-.kpi .k-val{
-  font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:-.02em;
-  color:var(--paper);line-height:1.1;
-}
-.kpi .k-delta{font-family:var(--mono);font-size:11px;color:var(--lime);margin-top:6px}
-.kpi .k-delta.neg{color:#E8A0A0}
-.kpi.lucro{background:rgba(169,226,102,.12);border-color:rgba(169,226,102,.45)}
-.kpi.lucro .k-val{color:var(--lime)}
-.bi-charts{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
-.bi-card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;
-  padding:18px 20px;
-}
-.bi-card .c-title{
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:#B8CDBE;margin-bottom:14px;
-  display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
-}
-.bi-legend{display:flex;gap:14px;text-transform:none;letter-spacing:.02em}
-.bi-legend span{display:inline-flex;align-items:center;gap:6px}
-.bi-legend i{width:9px;height:9px;border-radius:2px;display:block}
-.bi-card svg{width:100%;height:auto;display:block}
-.bi-card svg text{font-family:var(--mono);font-size:9px;fill:#8FA597}
-.donut-wrap{display:flex;align-items:center;gap:18px}
-.donut-wrap svg{width:130px;flex:none}
-.donut-list{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:12.5px;flex:1}
-.donut-list li{display:flex;align-items:center;gap:8px;color:#D8E3DA}
-.donut-list li i{width:9px;height:9px;border-radius:2px;flex:none}
-.donut-list li b{margin-left:auto;white-space:nowrap;padding-left:6px;font-family:var(--mono);font-weight:500;font-size:11.5px;color:var(--paper)}
-.donut-list li.is-lucro{color:var(--lime)}
-.donut-list li.is-lucro b{color:var(--lime)}
+.bi-shot{display:block;background:#fff;cursor:zoom-in}
+.bi-shot img{width:100%;height:auto;display:block}
 .bi-foot{
   display:flex;gap:10px;flex-wrap:wrap;
+  padding:18px 20px;
   font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  border-top:1px solid rgba(255,255,255,.08);
 }
 .bi-foot span{
   display:inline-flex;align-items:center;gap:8px;
@@ -1145,16 +1096,9 @@ footer{
   font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
   color:var(--muted);
 }
-@media(max-width:900px){
-  .bi-kpis{grid-template-columns:repeat(2,1fr)}
-  .bi-charts{grid-template-columns:1fr}
-}
 @media(max-width:520px){
-  .bi-body{padding:18px}
-  .kpi .k-val{font-size:22px}
   .bi-bar .url{display:none}
-  .donut-wrap{flex-direction:column;align-items:stretch}
-  .donut-wrap svg{margin:0 auto}
+  .bi-foot{padding:14px}
 }
 
 /* ---------- selos de pagamento ---------- */
@@ -1511,73 +1455,27 @@ footer{
     <div class="wrap">
       <div class="sec-head center">
         <span class="eyebrow center">Por dentro do painel</span>
-        <h2>É isso que você vai <em>enxergar</em> no fim das 2 horas.</h2>
-        <p>Seus números, organizados em uma tela só: quanto entrou, para onde foi e quanto realmente sobrou.</p>
+        <h2>Este é o painel que você vai <em>usar</em>.</h2>
+        <p>Uma planilha pronta no Google Planilhas: você lança receitas e gastos, e ela mostra quanto entrou, para onde foi e quanto realmente sobrou.</p>
       </div>
 
       <div class="bi-frame">
         <div class="bi-bar" aria-hidden="true">
           <i></i><i></i><i></i>
-          <span class="url">painel-financeiro-do-lucro</span>
-          <span class="demo">Dados ilustrativos</span>
+          <span class="url">Painel Financeiro · Negócios Digitais Conforme</span>
+          <span class="demo">Google Planilhas</span>
         </div>
-        <div class="bi-body">
-          <div class="bi-head">
-            <h3>Painel Financeiro do Lucro</h3>
-            <span class="periodo">Novembro</span>
-          </div>
-
-          <div class="bi-kpis">
-            <div class="kpi">
-              <div class="k-lbl">Faturamento</div>
-              <div class="k-val">R$ 47.820</div>
-              <div class="k-delta">▲ 6,0% vs. outubro</div>
-            </div>
-            <div class="kpi">
-              <div class="k-lbl">Custos do negócio</div>
-              <div class="k-val">R$ 33.620</div>
-              <div class="k-delta neg">70,3% do faturamento</div>
-            </div>
-            <div class="kpi lucro">
-              <div class="k-lbl">Lucro real</div>
-              <div class="k-val">R$ 14.200</div>
-              <div class="k-delta">▲ 10,1% vs. outubro</div>
-            </div>
-            <div class="kpi">
-              <div class="k-lbl">Margem de lucro</div>
-              <div class="k-val">29,7%</div>
-              <div class="k-delta">▲ 1,1 p.p.</div>
-            </div>
-          </div>
-
-          <div class="bi-charts">
-            <div class="bi-card">
-              <div class="c-title">
-                Faturamento × Lucro real · 6 meses
-                <span class="bi-legend">
-                  <span><i style="background:#3A6150"></i>Faturamento</span>
-                  <span><i style="background:#A9E266"></i>Lucro real</span>
-                </span>
-              </div>
-              <svg viewBox="0 0 400 180" role="img" aria-label="Faturamento e lucro real de junho a novembro: o lucro cresce de 9,1 mil para 14,2 mil"><line x1="34" x2="390" y1="160.0" y2="160.0" stroke="rgba(255,255,255,.07)"/><text x="0" y="163.0">0</text><line x1="34" x2="390" y1="130.0" y2="130.0" stroke="rgba(255,255,255,.07)"/><text x="0" y="133.0">10k</text><line x1="34" x2="390" y1="100.0" y2="100.0" stroke="rgba(255,255,255,.07)"/><text x="0" y="103.0">20k</text><line x1="34" x2="390" y1="70.0" y2="70.0" stroke="rgba(255,255,255,.07)"/><text x="0" y="73.0">30k</text><line x1="34" x2="390" y1="40.0" y2="40.0" stroke="rgba(255,255,255,.07)"/><text x="0" y="43.0">40k</text><line x1="34" x2="390" y1="10.0" y2="10.0" stroke="rgba(255,255,255,.07)"/><text x="0" y="13.0">50k</text><rect x="46" y="44.8" width="18" height="115.2" rx="3" fill="#3A6150"/><rect x="67" y="132.7" width="18" height="27.3" rx="3" fill="#A9E266" opacity="0.7"/><text x="66" y="176" text-anchor="middle">Jun</text><rect x="104" y="36.4" width="18" height="123.6" rx="3" fill="#3A6150"/><rect x="125" y="128.8" width="18" height="31.2" rx="3" fill="#A9E266" opacity="0.7"/><text x="124" y="176" text-anchor="middle">Jul</text><rect x="162" y="40.6" width="18" height="119.4" rx="3" fill="#3A6150"/><rect x="183" y="131.2" width="18" height="28.8" rx="3" fill="#A9E266" opacity="0.7"/><text x="182" y="176" text-anchor="middle">Ago</text><rect x="220" y="29.5" width="18" height="130.5" rx="3" fill="#3A6150"/><rect x="241" y="124.6" width="18" height="35.4" rx="3" fill="#A9E266" opacity="0.7"/><text x="240" y="176" text-anchor="middle">Set</text><rect x="278" y="24.7" width="18" height="135.3" rx="3" fill="#3A6150"/><rect x="299" y="121.3" width="18" height="38.7" rx="3" fill="#A9E266" opacity="0.7"/><text x="298" y="176" text-anchor="middle">Out</text><rect x="336" y="16.6" width="18" height="143.4" rx="3" fill="#5E8C6F"/><rect x="357" y="117.4" width="18" height="42.6" rx="3" fill="#A9E266" opacity="1"/><text x="356" y="176" text-anchor="middle" style="fill:#A9E266">Nov</text></svg>
-            </div>
-            <div class="bi-card">
-              <div class="c-title">Para onde foi o dinheiro</div>
-              <div class="donut-wrap">
-                <svg viewBox="0 0 42 42" role="img" aria-label="Para onde foi o faturamento de novembro: 29,7% virou lucro real"><circle cx="21" cy="21" r="15.9155" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="5"/><circle cx="21" cy="21" r="15.9155" fill="none" stroke="#A9E266" stroke-width="5" stroke-dasharray="29.7 70.3" stroke-dashoffset="25.0"/><circle cx="21" cy="21" r="15.9155" fill="none" stroke="#5E8C6F" stroke-width="5" stroke-dasharray="29.7 70.3" stroke-dashoffset="-4.7"/><circle cx="21" cy="21" r="15.9155" fill="none" stroke="#B08D3F" stroke-width="5" stroke-dasharray="19.1 80.9" stroke-dashoffset="-34.4"/><circle cx="21" cy="21" r="15.9155" fill="none" stroke="#8FA597" stroke-width="5" stroke-dasharray="14.4 85.6" stroke-dashoffset="-53.5"/><circle cx="21" cy="21" r="15.9155" fill="none" stroke="#3A6150" stroke-width="5" stroke-dasharray="7.1 92.9" stroke-dashoffset="-67.9"/><text x="21" y="21" text-anchor="middle" style="font-family:var(--serif);font-size:6.5px;font-weight:600;fill:#A9E266">29,7%</text><text x="21" y="26" text-anchor="middle" style="font-size:2.6px;letter-spacing:.2px;fill:#B8CDBE">MARGEM</text></svg>
-                <ul class="donut-list"><li class="is-lucro"><i style="background:#A9E266"></i>Lucro real<b>R$ 14.200</b></li><li class=""><i style="background:#5E8C6F"></i>Tráfego pago<b>R$ 14.200</b></li><li class=""><i style="background:#B08D3F"></i>Impostos + equipe<b>R$ 9.140</b></li><li class=""><i style="background:#8FA597"></i>Plataforma + coprodução<b>R$ 6.870</b></li><li class=""><i style="background:#3A6150"></i>Ferramentas + fixos<b>R$ 3.410</b></li></ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="bi-foot">
-            <span>Contas PF e PJ separadas</span>
-            <span>0 gastos pessoais na conta da empresa</span>
-            <span>Retirada do mês definida com base no lucro</span>
-          </div>
+        <a class="bi-shot" href="img/painel-planilha.webp" target="_blank" rel="noopener" aria-label="Ampliar imagem do Painel Financeiro">
+          <img src="img/painel-planilha.webp" width="1600" height="685" loading="lazy" decoding="async" alt="Painel Financeiro do Lucro no Google Planilhas: aba de janeiro com resumo do mês (receitas, gastos, lucro líquido e margem), lançamentos de receitas e gastos por categoria e fluxo de caixa diário">
+        </a>
+        <div class="bi-foot">
+          <span>Resumo do mês com lucro líquido e margem</span>
+          <span>Lançamentos de receitas e gastos por categoria</span>
+          <span>Fluxo de caixa diário</span>
+          <span>Uma aba por mês + visão anual</span>
         </div>
       </div>
-      <p class="bi-note">Imagem ilustrativa · os valores do seu painel serão os do seu negócio</p>
+      <p class="bi-note">Clique na imagem para ampliar · os valores do seu painel serão os do seu negócio</p>
     </div>
   </section>
 
