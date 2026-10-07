@@ -1282,24 +1282,6 @@ footer{
 .stack li{display:flex;align-items:baseline;gap:10px;font-size:15px;color:#D8E3DA}
 .stack .it{display:flex;gap:12px;align-items:flex-start;min-width:0}
 .stack .it svg{width:16px;height:16px;flex:none;color:var(--lime);margin-top:4px}
-.stack .dots{flex:1;min-width:16px;border-bottom:1px dotted rgba(255,255,255,.22);transform:translateY(-4px)}
-.stack s{font-family:var(--mono);font-size:13px;color:#8FA597;white-space:nowrap;text-decoration-color:#E8A0A0}
-.stack .free{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);white-space:nowrap}
-.stack-total{
-  display:flex;justify-content:space-between;align-items:baseline;
-  margin-top:22px;padding-top:18px;
-  border-top:1px solid rgba(255,255,255,.14);
-  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#B8CDBE;
-}
-.stack-total s{font-family:var(--serif);font-size:30px;letter-spacing:-.02em;text-transform:none;color:#E8A0A0;font-weight:600;text-decoration-thickness:2px}
-.oferta-preco .de{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:#B8CDBE;margin-bottom:6px}
-.oferta-preco .de s{color:#E8A0A0;text-decoration-thickness:2px}
-.oferta-preco .economia{
-  display:inline-block;margin-top:10px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.06em;
-  color:var(--forest-deep);background:var(--lime);
-  padding:4px 12px;border-radius:100px;font-weight:600;
-}
 .oferta-preco .parcelas{margin-top:12px}
 @media(max-width:520px){.stack li{font-size:14px}}
 
@@ -1672,30 +1654,27 @@ footer{
   <section class="oferta" id="oferta">
     <div class="oferta-inner">
       <span class="eyebrow center">Oferta</span>
-      <h2>R$ 555 em conteúdo e ferramentas.<br>Hoje, por menos que uma <em>rodada no Uber</em>.</h2>
+      <h2>Tudo isso, por menos que uma <em>rodada no Uber</em>.</h2>
 
       <div class="oferta-box">
         <div class="oferta-grid">
           <div>
-            <div class="oferta-inclui">Tudo o que você recebe</div>
+            <div class="oferta-inclui">O que está incluso</div>
             <ul class="stack">
-              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>4 aulas gravadas + checklist das 2 horas</span><span class="dots"></span><s>R$ 197</s></li>
-              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Painel Financeiro do Lucro (pronto para uso)</span><span class="dots"></span><s>R$ 147</s></li>
-              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bônus 01 · Guia: quanto posso retirar</span><span class="dots"></span><s>R$ 67</s></li>
-              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bônus 02 · Rotina financeira de 30 min</span><span class="dots"></span><s>R$ 47</s></li>
-              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bônus 03 · Agente de IA para categorização</span><span class="dots"></span><s>R$ 97</s></li>
-              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Suporte por e-mail durante a garantia</span><span class="dots"></span><span class="free">incluso</span></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>4 aulas gravadas + checklist das 2 horas</span></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Painel Financeiro do Lucro (pronto para uso)</span></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bônus 01 · Guia: quanto posso retirar</span></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bônus 02 · Rotina financeira de 30 min</span></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Bônus 03 · Agente de IA para categorização</span></li>
+              <li><span class="it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Suporte por e-mail durante a garantia</span></li>
             </ul>
-            <div class="stack-total"><span>Valor total</span><s>R$ 555</s></div>
           </div>
 
           <div class="oferta-divider" aria-hidden="true"></div>
 
           <div class="oferta-preco">
-            <div class="de">De <s>R$ 555</s></div>
             <div class="label">Tudo isso por apenas</div>
             <div class="valor"><span class="cifrao">R$</span>27<sup>,90</sup></div>
-            <div class="economia">Você economiza R$ 527,10 · 95% off</div>
             <div class="parcelas">à vista · pagamento único · acesso vitalício</div>
             <a class="btn btn-primary" href="#oferta">
               Fazer meu Raio X agora
